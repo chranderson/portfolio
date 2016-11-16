@@ -1,0 +1,52 @@
+@import './style/colors.scss';
+
+html {
+  overflow: hidden;
+  font-size: 16px;
+}
+html, body {
+  height: 100%;
+}
+
+body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;;
+  background: $bgColor;
+  display: flex;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 2em;
+  line-height: 1;
+  color: white;
+}
+
+h2 {
+  font-size: 1.8em;
+}
+
+h3 {
+  font-size: 1.8em;
+  line-height: 1.1;
+  margin: 0;
+  margin-bottom: 5px;
+  // letter-spacing: 0.03em;
+}
+
+h4 {
+  font-size: 1.4em;
+  // font-size: 23px;
+  line-height: 1.1;
+  margin: 0;
+  font-weight: 300;
+}

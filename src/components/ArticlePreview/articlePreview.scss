@@ -1,0 +1,59 @@
+@import '../../style/colors.scss';
+
+.ArticlePreview {
+  background: darken(white, 5%);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0,0,0,0.09);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: 3px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+
+.metaData {
+  color: lighten($fontColor, 10%);
+  font-size: 0.8em;
+  display: flex;
+  flex-direction: row;
+  height: 30px;
+  margin-bottom: 5px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.articleContent {
+  flex: 1;
+  padding-bottom: 5px;
+
+  > h3 {
+    color: $fontColor;
+  }
+
+  > h4 {
+    color: lighten($fontColor, 20%);
+  }
+}
+
+.readMore {
+  height: 30px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  font-size: 0.8em;
+}
+
+.readMoreLink {
+  color: lighten($fontColor, 10%);
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.15s linear;
+  &:hover {
+    opacity: 1;
+  }
+}

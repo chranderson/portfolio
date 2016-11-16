@@ -1,0 +1,10 @@
+@import '../../style/colors.scss';
+
+.Home {
+  display: flex;
+  flex-direction: column;
+  flex-wrap:  nowrap;
+  flex: 1;
+  align-items: flex-start;
+  height: 100%;
+}

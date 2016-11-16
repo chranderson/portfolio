@@ -1,0 +1,12 @@
+@import '../../style/colors.scss';
+
+.Header {
+  color: lighten($bgColor, 50%);
+  background: darken($bgColor, 6%);
+  padding: 0 0.5em;
+  height: 40px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
