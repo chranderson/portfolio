@@ -1,0 +1,36 @@
+.Cover {
+  box-sizing: border-box;
+  /*background: rgba(255,255,255,0.5);*/
+  background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.4));
+  background-image: url('./superMoonMtnPeak.jpg');
+
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+
+  min-height: 20vh;
+  height: 20vh;
+
+}
+
+
+@media (min-width: 700px) {
+  .Cover {
+    min-height: 35vh;
+    height: 35vh;
+  }
+
+}
+
+@media (min-width: 1000px) {
+  .Cover {
+    min-height: 50vh;
+    height: 50vh;
+  }
+}

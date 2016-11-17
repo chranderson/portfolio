@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import './cover.scss';
 
-
 export default class Cover extends Component {
 
   static propTypes = {
@@ -15,14 +14,14 @@ export default class Cover extends Component {
   }
 
   render() {
-
+    const styles = require('./cover.css');
     const {
       time,
       title
     } = this.props;
 
     return (
-      <div className="Cover">
+      <div className={styles.Cover}>
         <h1>{ title }</h1>
         <p>{ time }</p>
       </div>
