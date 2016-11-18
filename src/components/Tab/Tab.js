@@ -6,6 +6,7 @@ export default class Tab extends Component {
 
   static propTypes = {
     handleClick: PropTypes.func,
+    link: PropTypes.string,
     selected: PropTypes.bool,
     tabName: PropTypes.string
   }
@@ -22,6 +23,7 @@ export default class Tab extends Component {
   render() {
 
     const {
+      link,
       selected,
       tabName
     } = this.props;
@@ -31,8 +33,14 @@ export default class Tab extends Component {
               ? ' active'
               : '';
     return (
-      <div className={tabStyle} onClick={this.handleClick}>
-        {tabName}
+      <div className={tabStyle}
+           onClick={ !link ? this.handleClick : null }>
+        {
+          link
+          ? <a href={link} target="_blank" title="view code">{tabName}</a>
+          : tabName
+        }
+
       </div>
     );
   }

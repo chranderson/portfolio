@@ -27,12 +27,36 @@ export default class Home extends Component {
     message: 'Home page',
   }
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: 'chr_s_nd_rs_n',
+    };
+    this.handleEcho = this.handleEcho.bind(this);
+  }
+
+  handleEcho(echo) {
+    console.log('echo: ', echo);
+    this.setState({
+      title: echo
+    })
+  }
+
+  goHome = () => {
+    this.setState({
+      title: 'chr_s_nd_rs_n'
+    });
+  }
+
   render() {
-    // const styles = require('./Away.css');
+
     const {
-      // message,
       time
     } = this.props;
+
+    const {
+      title
+    } = this.state;
 
 
     const prevSectionStyle = {
@@ -42,14 +66,9 @@ export default class Home extends Component {
 
     return (
       <div className="Home">
-        <Cover title={'chr_s_nd_rs_n'} time={time}/>
-        <MenuBar />
-        <section style={prevSectionStyle}>
-          <ArticlePreview />
-          <ArticlePreview />
-          <ArticlePreview />
-          <ArticlePreview />
-          <ArticlePreview />
+        <Cover title={title} time={time} />
+        <MenuBar echo={this.handleEcho} />
+        <section style={prevSectionStyle} onClick={this.goHome}>
           <ArticlePreview />
           <ArticlePreview />
           <ArticlePreview />

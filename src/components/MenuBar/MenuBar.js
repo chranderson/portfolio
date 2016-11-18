@@ -10,11 +10,18 @@ import './menuBar.scss';
 export default class MenuBar extends Component {
 
   static propTypes = {
+    echo: PropTypes.func,
     options: PropTypes.array
   }
 
   static defaultProps = {
-    options: ['latest', 'random', 'react', 'redux', 'style']
+    options: [
+      { name: 'random' },
+      { name: 'react' },
+      { name: 'redux' },
+      { name: 'style' },
+      { name: 'view code', link: 'https://github.com/chranderson/portfolio' },
+    ],
   }
 
   constructor() {
@@ -26,14 +33,20 @@ export default class MenuBar extends Component {
   }
 
   handleTabClick(clickedTab: string) {
+    // console.log('clickedTab: ', clickedTab);
+    this.props.echo(clickedTab);
     this.setState({
       selectedTab: clickedTab
     });
   }
 
-  renderTabs(selectedTab: string, tabs: Array<string>) {
+  renderTabs(selectedTab: string, tabs: Array<Object>) {
     return tabs.map((tab, index) => {
-      return <Tab key={index} selected={tab === selectedTab} tabName={tab} handleClick={this.handleTabClick} />;
+      return <Tab key={index}
+                  selected={tab.name === selectedTab}
+                  tabName={tab.name}
+                  handleClick={this.handleTabClick}
+                  link={tab.link} />;
     });
 
   }

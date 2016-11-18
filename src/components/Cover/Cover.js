@@ -1,5 +1,9 @@
 import React, { Component, PropTypes } from 'react';
-import './cover.scss';
+// import './cover.scss';
+
+import {
+  ArticleFeature
+} from '../../components';
 
 export default class Cover extends Component {
 
@@ -16,14 +20,19 @@ export default class Cover extends Component {
   render() {
     const styles = require('./cover.css');
     const {
-      time,
+      // time,
       title
     } = this.props;
 
     return (
       <div className={styles.Cover}>
-        <h1>{ title }</h1>
-        <p>{ time }</p>
+
+        {
+          title === 'chr_s_nd_rs_n'
+          ? <h1>{ title }</h1>
+          : <ArticleFeature type={title} />
+        }
+
       </div>
     );
   }

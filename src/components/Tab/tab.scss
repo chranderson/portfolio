@@ -1,3 +1,5 @@
+@import '../../style/colors.scss';
+
 .Tab {
   height: 40px;
   flex: 1 20%;
@@ -11,7 +13,8 @@
   // border-bottom: 2px solid transparent;
   cursor: pointer;
   opacity: 0.8;
-
+  color: inherit;
+  transition: color 0.25s ease;
   &:hover {
     opacity: 0.9;
   }
@@ -20,7 +23,9 @@
 }
 
 .active {
-  background: rgba(255,255,255,0.5);
+  color: $red;
+  opacity: 1;
+  // background: rgba(255,255,255,0.5);
   // border-color: yellow;
   // border-color: yellow;
 }

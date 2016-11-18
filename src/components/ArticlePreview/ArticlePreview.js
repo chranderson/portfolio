@@ -22,12 +22,20 @@ export default class ArticlePreview extends Component {
     }
   }
 
-  componentDidMount() {
-    const preview = this.refs.preview;
+  onMouseOver = () => this.animate('in');
+  onMouseOut  = () => this.animate('out');
 
+
+  animate(dir) {
+    const preview = this.refs.articlePreview;
     const timeMax = new TimelineMax({repeat: 0});
-    timeMax.to(preview, .25, {y:"-10"});
+    const yNum = dir === 'out'
+               ? '0'
+               : '-4';
+
+    timeMax.to(preview, .25, {y:yNum});
   }
+
 
   render() {
 
@@ -36,7 +44,10 @@ export default class ArticlePreview extends Component {
     } = this.props;
 
     return (
-      <div ref="preview" className="ArticlePreview">
+      <div onMouseOver={this.onMouseOver}
+           onMouseOut={this.onMouseOut}
+           ref="articlePreview"
+           className="ArticlePreview">
         <div className="metaData">
           <span>{article.author}</span>
           <span>{article.date}</span>
