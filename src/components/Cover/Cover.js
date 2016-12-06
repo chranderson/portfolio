@@ -14,7 +14,7 @@ export default class Cover extends Component {
 
   static defaultProps = {
     time: 'time',
-    title: 'chr_s_nd_rs_n'
+    title: 'ca'
   }
 
   render() {
@@ -28,7 +28,7 @@ export default class Cover extends Component {
       <div className={styles.Cover}>
 
         {
-          title === 'chr_s_nd_rs_n'
+          title === 'ca'
           ? <h1>{ title }</h1>
           : <ArticleFeature type={title} />
         }

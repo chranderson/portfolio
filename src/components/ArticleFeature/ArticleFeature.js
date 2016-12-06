@@ -40,7 +40,7 @@ export default class ArticleFeature extends Component {
                ? '0'
                : '-4';
 
-    timeMax.to(feature, .25, {x:yNum});
+    timeMax.to(feature, .25, {y:yNum});
   }
 
 
@@ -50,13 +50,13 @@ export default class ArticleFeature extends Component {
       // article
       type
     } = this.props;
-    const bgColor = 'blue';
+    const bgColor = 'blue2';
 
     return (
       <div onMouseOver={this.onMouseOver}
            onMouseOut={this.onMouseOut}
            className={`ArticleFeature ${bgColor}`}>
-        <h1 ref="articleFeature">{type}</h1>
+        <h1 ref="articleFeature">Latest {type} Article</h1>
       </div>
     );
   }

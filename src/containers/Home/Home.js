@@ -8,6 +8,10 @@ import {
   MenuBar
 } from '../../components';
 
+import {
+  Aside
+} from '../../containers';
+
 import './home.scss';
 
 @connect(
@@ -30,7 +34,7 @@ export default class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: 'chr_s_nd_rs_n',
+      title: 'ca',
     };
     this.handleEcho = this.handleEcho.bind(this);
   }
@@ -44,7 +48,7 @@ export default class Home extends Component {
 
   goHome = () => {
     this.setState({
-      title: 'chr_s_nd_rs_n'
+      title: 'ca'
     });
   }
 
@@ -59,20 +63,23 @@ export default class Home extends Component {
     } = this.state;
 
 
-    const prevSectionStyle = {
-      maxWidth: '600px',
-      margin: '2em auto',
-    };
+    // const prevSectionStyle = {
+    //   maxWidth: '600px',
+    //   margin: '2em auto',
+    // };
 
     return (
       <div className="Home">
         <Cover title={title} time={time} />
         <MenuBar echo={this.handleEcho} />
-        <section style={prevSectionStyle} onClick={this.goHome}>
-          <ArticlePreview />
-          <ArticlePreview />
-          <ArticlePreview />
-        </section>
+        <div className="contentWrap">
+          <section className="main" onClick={this.goHome}>
+            <ArticlePreview />
+            <ArticlePreview />
+            <ArticlePreview />
+          </section>
+          <Aside />
+        </div>
       </div>
     );
   }
