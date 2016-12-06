@@ -16,11 +16,9 @@ export default class MenuBar extends Component {
 
   static defaultProps = {
     options: [
-      { name: 'random' },
       { name: 'react' },
       { name: 'redux' },
       { name: 'style' },
-      { name: 'view code', link: 'https://github.com/chranderson/portfolio' },
     ],
   }
 

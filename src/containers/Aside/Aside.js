@@ -24,19 +24,28 @@ export default class Aside extends Component {
   static propTypes = {}
   static defaultProps = {}
 
-
   render() {
 
+    const asideStyle = {
+      fontSize: 14,
+      letterSpacing: '0.05em',
+      lineHeight: 1.5,
+      padding: '1em 2em'
+    };
+
     return (
-      <section className="Aside">
+      <section className="Aside" style={asideStyle}>
         <h4>Aside Header</h4>
-        <p>Climb leg rub face on everything give attitude nap all day for under the bed. Chase mice attack feet but rub face on everything hopped up on goofballs.</p>
+        <p>Climb leg rub face on everything give attitude nap all day for under the bed...</p>
+
         <h4>Aside Header</h4>
-        <p>Climb leg rub face on everything give attitude nap all day for under the bed. Chase mice attack feet but rub face on everything hopped up on goofballs.</p>
+        <p>Climb leg rub face on everything give attitude nap all day for under the bed...</p>
+
         <h4>Aside Header</h4>
-        <p>Climb leg rub face on everything give attitude nap all day for under the bed. Chase mice attack feet but rub face on everything hopped up on goofballs.</p>
+        <p>Climb leg rub face on everything give attitude nap all day for under the bed...</p>
+
         <h4>Aside Header</h4>
-        <p>Climb leg rub face on everything give attitude nap all day for under the bed. Chase mice attack feet but rub face on everything hopped up on goofballs.</p>
+        <p>Climb leg rub face on everything give attitude nap all day for under the bed...</p>
       </section>
     );
   }

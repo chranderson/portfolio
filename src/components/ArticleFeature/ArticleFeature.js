@@ -10,6 +10,7 @@ export default class ArticleFeature extends Component {
 
   static propTypes = {
     article: PropTypes.object,
+    color: PropTypes.array,
     type: PropTypes.string,
   }
 
@@ -21,6 +22,7 @@ export default class ArticleFeature extends Component {
       readTime: 10,
       subTitle: 'This is a short description for the subtitle',
     },
+    color: ['#000000', '#ffffff'],
     type: ''
   }
 
@@ -47,16 +49,33 @@ export default class ArticleFeature extends Component {
   render() {
 
     const {
-      // article
+      article,
+      color,
       type
     } = this.props;
-    const bgColor = 'blue2';
+    // const bgColor = 'blue2';
+
+    const dynamicStyles = {
+      background: color[0],
+      color: color[1]
+    };
+
+    const subTitleStyle = {
+      alignSelf: 'flex-start',
+      background: color[2],
+      color: color[0],
+      padding: '5px 10px',
+    };
 
     return (
       <div onMouseOver={this.onMouseOver}
            onMouseOut={this.onMouseOut}
-           className={`ArticleFeature ${bgColor}`}>
+           className={`ArticleFeature`}
+           style={dynamicStyles}>
         <h1 ref="articleFeature">Latest {type} Article</h1>
+        <subTitle style={subTitleStyle}>
+          { article.subTitle }
+        </subTitle>
       </div>
     );
   }
