@@ -16,7 +16,7 @@ export default class MenuBar extends Component {
 
   static defaultProps = {
     options: [
-      { name: 'react' },
+      { name: 'home' },
       { name: 'redux' },
       { name: 'style' },
     ],

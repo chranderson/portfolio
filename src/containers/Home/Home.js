@@ -4,13 +4,14 @@ import { connect } from 'react-redux';
 import * as blogActionCreators from '../../redux/reducers/Blog/blog-reducer';
 import {
   // Button,
+  Article,
   ArticlePreview,
   Cover,
   MenuBar
 } from '../../components';
 
 import {
-  Aside
+  // Aside
 } from '../../containers';
 
 import './home.scss';
@@ -38,7 +39,7 @@ export default class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: 'ca',
+      selectedId: null,
     };
     this.getAuthor = this.getAuthor.bind(this);
     this.handleEcho = this.handleEcho.bind(this);
@@ -50,16 +51,30 @@ export default class Home extends Component {
     this.setState({
       title: echo
     })
+
+    if (echo === 'home') {
+      this.setState({
+        selectedId: null
+      })
+    }
   }
 
-  goHome = () => {
-    this.setState({
-      title: 'ca'
-    });
-  }
+  // goHome = () => {
+  //   this.setState({
+  //     title: 'ca'
+  //   });
+  // }
 
   getAuthor(authorId) {
     return this.props.authors.filter(author => author.id === authorId)[0];
+  }
+
+  renderArticle() {
+    const { posts } = this.props;
+    const { selectedId } = this.state;
+    const selectedPost = posts.filter(post => post.id === selectedId)[0];
+    console.log('selectedPost: ', selectedPost);
+    return <Article article={selectedPost} />;
   }
 
   renderArticlePreviews() {
@@ -69,6 +84,10 @@ export default class Home extends Component {
 
   updateFeature(id) {
     console.log('id: ', id);
+    this.setState({
+      selectedId:  id
+    });
+
     let { dispatch } = this.props;
     dispatch(blogActionCreators.updateFeature(id))
   }
@@ -82,6 +101,7 @@ export default class Home extends Component {
     } = this.props;
 
     const {
+      selectedId,
       title
     } = this.state;
 
@@ -99,9 +119,13 @@ export default class Home extends Component {
 
         <div className="contentWrap">
           <section className="main">
-            { this.renderArticlePreviews() }
+            {
+              selectedId !== null
+              ? this.renderArticle()
+              : this.renderArticlePreviews()
+            }
           </section>
-          <Aside />
+
         </div>
 
       </div>

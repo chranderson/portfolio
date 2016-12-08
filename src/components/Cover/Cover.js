@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 // import './cover.scss';
 
+import setupImage from './man-deletes-comp.gif';
+
 import {
   ArticleFeature
 } from '../../components';
@@ -59,9 +61,11 @@ export default class Cover extends Component {
       title
     } = this.props;
 
+    // const img = process.env.PUBLIC_URL + '/man-deletes-image.gif';
+
     return (
       <div className={styles.Cover}>
-        <ArticleFeature article={article} author={author} type={title} color={this.getColor()} />
+        <ArticleFeature article={article} image={setupImage} author={author} type={title} color={this.getColor()} />
       </div>
     );
   }

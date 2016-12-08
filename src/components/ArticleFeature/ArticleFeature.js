@@ -12,6 +12,7 @@ export default class ArticleFeature extends Component {
     article: PropTypes.object,
     author: PropTypes.object,
     color: PropTypes.array,
+    image: PropTypes.string,
     type: PropTypes.string,
   }
 
@@ -20,6 +21,7 @@ export default class ArticleFeature extends Component {
       id: "5303d74c64f66366f00cb9b2a94f3251bf5",
       username: "@chr_s_nd_rs_n",
       name: "Chris Anderson",
+      image: `${process.env.PUBLIC_URL}/img/logo.png`,
       url: "https://chranderson.github.io/portfolio",
       imageUrl: "https://avatars2.githubusercontent.com/u/2660355?v=3&u=f866c21d519dcc65b0e5f5833fd12aaba9d57a6a&s=400"
     },
@@ -68,6 +70,7 @@ export default class ArticleFeature extends Component {
       article,
       author,
       color,
+      image,
       // type
     } = this.props;
     // const bgColor = 'blue2';
@@ -92,6 +95,10 @@ export default class ArticleFeature extends Component {
       padding: '5px 10px',
     };
     const publishDate = new Date(article.publishedAt).toLocaleDateString();
+    console.log(image);
+    const mediaStyle = {
+      background: `url(${image}) center`,
+    };
 
     return (
       <div onMouseOver={this.onMouseOver}
@@ -114,8 +121,8 @@ export default class ArticleFeature extends Component {
               <a id="featureArticleLink" href={article.url} title={`read article`} target="_blank">Read more...</a>
             </div>
           </section>
-          <section className={`media`}>
-            thing
+          <section className={`media`} style={mediaStyle}>
+            <img src={image} role="presentation" />
           </section>
         </div>
 

@@ -1,3 +1,5 @@
+
+export Article from './Article/Article';
 export ArticleFeature from './ArticleFeature/ArticleFeature';
 export ArticlePreview from './ArticlePreview/ArticlePreview';
 export Button from './Button/Button';
