@@ -101,7 +101,7 @@ export default class ArticleFeature extends Component {
 
         <div className={`articleInner`}>
           <section className={`title`}>
-            <span style={dateStyle}>{publishDate}</span>
+            <span className={`date`} style={dateStyle}>{publishDate}</span>
             <h1 ref="articleFeature">
               { article.title }
             </h1>

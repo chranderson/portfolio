@@ -52,9 +52,9 @@ export default class ArticlePreview extends Component {
     const timeMax = new TimelineMax({repeat: 0});
     const yNum = dir === 'out'
                ? '0'
-               : '-2';
+               : '-1';
     const opNum = dir === 'out'
-               ? 0.7
+               ? 0.9
                : 1;
 
     timeMax.to(preview, .25, {y:yNum, opacity:opNum});
