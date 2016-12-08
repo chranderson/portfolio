@@ -10,17 +10,33 @@ export default class ArticleFeature extends Component {
 
   static propTypes = {
     article: PropTypes.object,
+    author: PropTypes.object,
     color: PropTypes.array,
     type: PropTypes.string,
   }
 
   static defaultProps = {
+    author: {
+      id: "5303d74c64f66366f00cb9b2a94f3251bf5",
+      username: "@chr_s_nd_rs_n",
+      name: "Chris Anderson",
+      url: "https://chranderson.github.io/portfolio",
+      imageUrl: "https://avatars2.githubusercontent.com/u/2660355?v=3&u=f866c21d519dcc65b0e5f5833fd12aaba9d57a6a&s=400"
+    },
     article: {
-      author: 'C-Boi',
-      title: 'Article Title',
-      date: 'Nov 17',
-      readTime: 10,
-      subTitle: 'This is a short description for the subtitle',
+      id: "",
+      authorId: "",
+      title: "",
+      subTitle: '',
+      contentFormat: "html",
+      content: "<h1>Overwhelmed by all of the options?!</h1><p>You are not alone.</p>",
+      url: "https://chranderson.github.io/portfolio/blog/posts/see-my-setup-001aaa",
+      canonicalUrl: "http://localhost:3015/posts/see-my-setup",
+      tags: ["js", "js-fatigue", "setup"],
+      publishStatus: "unlisted",
+      publishedAt: 1442286338435,
+      license: "all-rights-reserved",
+      licenseUrl: "https://chranderson.github.io/license"
     },
     color: ['#000000', '#ffffff'],
     type: ''
@@ -50,8 +66,9 @@ export default class ArticleFeature extends Component {
 
     const {
       article,
+      author,
       color,
-      type
+      // type
     } = this.props;
     // const bgColor = 'blue2';
 
@@ -60,22 +77,48 @@ export default class ArticleFeature extends Component {
       color: color[1]
     };
 
+    const dateStyle = {
+      color: color[2],
+    };
+
+    const linkStyle = {
+      color: color[2],
+    };
+
     const subTitleStyle = {
       alignSelf: 'flex-start',
       background: color[2],
       color: color[0],
       padding: '5px 10px',
     };
+    const publishDate = new Date(article.publishedAt).toLocaleDateString();
 
     return (
       <div onMouseOver={this.onMouseOver}
            onMouseOut={this.onMouseOut}
            className={`ArticleFeature`}
            style={dynamicStyles}>
-        <h1 ref="articleFeature">Latest {type} Article</h1>
-        <subTitle style={subTitleStyle}>
-          { article.subTitle }
-        </subTitle>
+
+        <div className={`articleInner`}>
+          <section className={`title`}>
+            <span style={dateStyle}>{publishDate}</span>
+            <h1 ref="articleFeature">
+              { article.title }
+            </h1>
+            <subTitle style={subTitleStyle}>
+              { article.subTitle }
+            </subTitle>
+
+            <div className={'linkRow'} style={linkStyle}>
+              <a href={author.url} title={`more by ${author.name}`} target="_blank">{author.name}</a>
+              <a id="featureArticleLink" href={article.url} title={`read article`} target="_blank">Read more...</a>
+            </div>
+          </section>
+          <section className={`media`}>
+            thing
+          </section>
+        </div>
+
       </div>
     );
   }

@@ -1,9 +1,11 @@
 {
+  "featureId": "003aaa",
   "data": [
     {
       "id": "001aaa",
       "authorId": "5303d74c64f66366f00cb9b2a94f3251bf5",
       "title": "See My Setup",
+      "subTitle": "Overwhelmed by all of the options?! You are not alone.",
       "contentFormat": "html",
       "content": "<h1>Overwhelmed by all of the options?!</h1><p>You are not alone.</p>",
       "url": "https://chranderson.github.io/portfolio/blog/posts/see-my-setup-001aaa",
@@ -18,8 +20,9 @@
       "id": "002aaa",
       "authorId": "5303d74c64f66366f00cb9b2a94f3251bf5",
       "title": "Getting Started with Dotfiles",
+      "subTitle": "Dotfiles are dotfiles are dotfiles. Boring but helpful.",
       "contentFormat": "html",
-      "content": "<h1>Save time!</h1><p>article content.</p>",
+      "content": "<h1>Save time!</h1><p>Dotfiles are dotfiles are dotfiles. Boring but helpful.</p>",
       "url": "https://chranderson.github.io/portfolio/blog/posts/getting-started-with-dotfiles-002aaa",
       "canonicalUrl": "http://localhost:3015/posts/getting-started-with-dotfiles",
       "tags": ["config", "dotfiles", "getting-started"],
@@ -32,6 +35,7 @@
       "id": "003aaa",
       "authorId": "5303d74c64f66366f00cb9b2a94f3251bf5",
       "title": "How To: The Organization of a Pizza Party",
+      "subTitle": "5 Steps to Set Up the Perfect Pizza Party",
       "contentFormat": "html",
       "content": "<h1>5 Steps to Set Up the Most Memorable Pizza Party</h1><p>Step 1. Pick Your Pizza</p>",
       "url": "https://chranderson.github.io/portfolio/blog/posts/how-to-the-organization-of-a-pizza-party-003aaa",
@@ -46,6 +50,7 @@
       "id": "004aad",
       "authorId": "5303d74c64f66366f00cb9b2a94f3251bf5",
       "title": "Smart Lighting",
+      "subTitle": "Lighting your home like nature(ish). Your personal wireless lighting that lets you easily control your light from your device and create the right ambience for your every moments.",
       "contentFormat": "html",
       "content": "<h1>Lighting that you dont notice.</h1><p>Only light what you need, and use natural light colors and your eyes will thank you.</p>",
       "url": "https://chranderson.github.io/portfolio/blog/posts/smart-lighting-thoughts-004aaa",

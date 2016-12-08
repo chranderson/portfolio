@@ -13,6 +13,7 @@ import {
 //styles
 import './app.scss';
 
+import * as authors from '../../static/authors';
 import * as posts from '../../static/posts';
 
 import * as blogActionCreators from '../../redux/reducers/Blog/blog-reducer';
@@ -37,13 +38,18 @@ export default class App extends Component {
   }
 
   componentDidMount() {
+    this.loadAuthors();
     this.loadPosts();
   }
 
   loadPosts = () => {
     let { dispatch } = this.props;
-    let action = blogActionCreators.loadPosts(posts.data)
-    dispatch(action)
+    dispatch(blogActionCreators.loadPosts(posts))
+  };
+
+  loadAuthors = () => {
+    let { dispatch } = this.props;
+    dispatch(blogActionCreators.loadAuthors(authors))
   };
 
   handleWheel(event, synthEvent) {

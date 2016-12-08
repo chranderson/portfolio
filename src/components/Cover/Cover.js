@@ -8,51 +8,60 @@ import {
 export default class Cover extends Component {
 
   static propTypes = {
+    author: PropTypes.object,
+    article: PropTypes.object,
     time: PropTypes.string,
     title: PropTypes.string
   }
 
   static defaultProps = {
+    author: {
+      id: "5303d74c64f66366f00cb9b2a94f3251bf5",
+      username: "@chr_s_nd_rs_n",
+      name: "Chris Anderson",
+      url: "https://chranderson.github.io/portfolio",
+      imageUrl: "https://avatars2.githubusercontent.com/u/2660355?v=3&u=f866c21d519dcc65b0e5f5833fd12aaba9d57a6a&s=400"
+    },
+    article: {
+      id: "",
+      authorId: "",
+      title: "",
+      subTitle: '',
+      contentFormat: "html",
+      content: "<h1>Overwhelmed by all of the options?!</h1><p>You are not alone.</p>",
+      url: "https://chranderson.github.io/portfolio/blog/posts/see-my-setup-001aaa",
+      canonicalUrl: "http://localhost:3015/posts/see-my-setup",
+      tags: ["js", "js-fatigue", "setup"],
+      publishStatus: "unlisted",
+      publishedAt: 1442286338435,
+      license: "all-rights-reserved",
+      licenseUrl: "https://chranderson.github.io/license"
+    },
     time: 'time',
     title: 'ca'
   }
 
-  getColor(title: string) {
-    let color;
-    if (title === 'redux') color = ['#252233 ', '#EE6C1F', '#D0511A', '#A4060E', '#74030A'];
-    if (title === 'react') color = ['#171A1F', '#FEEBB3', '#E3CA8A', '#B6906C'];
-    if (title === 'style') color = ['#212121', '#F73246', '#9E8B71', '#2E58F5', '#F18C24' ];
+  getColor() {
+    const colors = {
+      blackOrange: ['#212121', '#F73246', '#9E8B71', '#2E58F5', '#F18C24' ],
+      blueGold: ['#171A1F', '#FEEBB3', '#E3CA8A', '#B6906C'],
+      orangeBlue: ['#252233 ', '#EE6C1F', '#D0511A', '#A4060E', '#74030A'],
+    };
 
-    return color;
+    return colors.blueGold;
   }
 
   render() {
     const styles = require('./cover.css');
     const {
-      // time,
+      article,
+      author,
       title
     } = this.props;
 
-
-    const mainTitle = {
-      color: '#FEEBB3',
-      boxShadow: 'none',
-      border: '2px solid #D0511A',
-      padding: '0px 10px 10px 10px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center'
-    };
-
     return (
       <div className={styles.Cover}>
-
-        {
-          title === 'ca'
-          ? <h1 style={mainTitle}>{ title }</h1>
-          : <ArticleFeature type={title} color={this.getColor(title)} />
-        }
-
+        <ArticleFeature article={article} author={author} type={title} color={this.getColor()} />
       </div>
     );
   }
