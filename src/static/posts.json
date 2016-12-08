@@ -5,7 +5,7 @@
       "id": "001aaa",
       "authorId": "5303d74c64f66366f00cb9b2a94f3251bf5",
       "title": "See My Setup",
-      "subTitle": "Overwhelmed by all of the options?! You are not alone.",
+      "subTitle": "With so many options, how do you configure your setup?.",
       "contentFormat": "html",
       "content": "Configuring a new machine is a headache. Getting all of your settings set up the exact same as you had on a previous machine can prove difficult; unless you have dotfiles in your root directory.",
       "url": "https://chranderson.github.io/portfolio/blog/posts/see-my-setup-001aaa",
@@ -34,7 +34,7 @@
     {
       "id": "003aaa",
       "authorId": "5303d74c64f66366f00cb9b2a94f3251bf5",
-      "title": "How To: The Organization of a Pizza Party",
+      "title": "How To: Organize a Pizza Party",
       "subTitle": "5 Steps to Set Up the Perfect Pizza Party",
       "contentFormat": "html",
       "content": "<h1>5 Steps to Set Up the Most Memorable Pizza Party</h1><p>Step 1. Pick Your Pizza</p>",

@@ -103,7 +103,44 @@ export default class Article extends Component {
             <span>{publishDate}</span>
           </div>
           <h4>{subTitle}</h4>
-          <div className="content">{content}</div>
+          <div className="content">
+            {
+              id === '001aaa'
+              ? <div>
+                  <ul>
+                    <li>Text Editor: Atom</li>
+                    <li>iTerm</li>
+                    <li>SASS</li>
+                    <li>React</li>
+                    <li>Redux</li>
+                  </ul>
+
+                </div>
+              : null
+            }
+            {
+              id === '002aaa'
+              ? <div>
+                  <h2>With so many options, how do you configure your setup?</h2>
+                  <span>
+                  In computing, a hidden folder (sometimes hidden directory) or hidden file is a folder or file which filesystem utilities do not display by default when showing a directory listing. They are commonly used for storing user preferences or preserving the state of a utility, and are frequently created implicitly by using various utilities. They are not a security mechanism because access is not restricted - usually the intent is simply not "clutter" the display of the contents of a directory listing with files the user did not directly create
+                  </span>
+
+                </div>
+              : null
+            }
+            {
+              id === '003aaa'
+              ? <ol>
+                  <li>Pick a location & date</li>
+                  <li>Book Andrew WK to play at the party.</li>
+                  <li>Create a facebook event & invite everyone.</li>
+                  <li>Order your pizza.</li>
+                  <li>Party Hard!</li>
+                </ol>
+              : null
+            }
+          </div>
         </section>
 
       </div>

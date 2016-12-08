@@ -48,13 +48,17 @@ export default class Home extends Component {
 
   handleEcho(echo) {
     console.log('echo: ', echo);
-    this.setState({
-      title: echo
-    })
 
-    if (echo === 'home') {
+    if (typeof echo === 'string') {
+      const menuItems = ['Home', 'Redux', 'React'];
+      let newSelection;
+      if (echo !== 'Home' || echo !== 'Redux' || echo !== 'React') {
+        newSelection = null;
+      } else {
+        newSelection = echo;
+      }
       this.setState({
-        selectedId: null
+        selectedId: newSelection
       })
     }
   }
@@ -110,10 +114,11 @@ export default class Home extends Component {
     // console.log('posts.length: ', posts.length);
     // console.log('featArticle: ', featArticle);
     const author = featArticle ? this.getAuthor(featArticle.authorId) : undefined;
+    console.log('selectedId: ', selectedId);
     return (
       <div className="Home">
 
-        <Cover article={featArticle} author={author} title={title} time={time} />
+        <Cover article={featArticle} author={author} title={title} time={time} onEcho={this.handleEcho} />
 
         <MenuBar echo={this.handleEcho} />
 

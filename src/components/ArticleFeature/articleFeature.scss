@@ -67,6 +67,8 @@
   flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
+  max-width: 60%;
+  overflow: hidden;
 
   @media (max-width: 700px) {
     min-height: 50%;

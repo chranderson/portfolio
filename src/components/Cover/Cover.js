@@ -1,7 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 // import './cover.scss';
 
-import setupImage from './man-deletes-comp.gif';
+import dotfilesImg from './dotfiles.gif';
+import lightingImg from './lighting.gif';
+import setupImg from './man-deletes-comp.gif';
+import pizzaImg from './pizza.gif';
 
 import {
   ArticleFeature
@@ -10,6 +13,7 @@ import {
 export default class Cover extends Component {
 
   static propTypes = {
+    echo: PropTypes.func,
     author: PropTypes.object,
     article: PropTypes.object,
     time: PropTypes.string,
@@ -53,19 +57,30 @@ export default class Cover extends Component {
     return colors.blueGold;
   }
 
+  handleEcho = () => {
+    this.props.onEcho(this.props.article.id)
+  }
+
   render() {
     const styles = require('./cover.css');
     const {
       article,
       author,
+      // echo,
       title
     } = this.props;
 
+    let articleImg;
+    if (article.id === '001aaa') articleImg = setupImg;
+    if (article.id === '002aaa') articleImg = dotfilesImg;
+    if (article.id === '003aaa') articleImg = pizzaImg;
+    if (article.id === '004aad') articleImg = lightingImg;
+    console.log('articleImg: ', articleImg);
     // const img = process.env.PUBLIC_URL + '/man-deletes-image.gif';
 
     return (
       <div className={styles.Cover}>
-        <ArticleFeature article={article} image={setupImage} author={author} type={title} color={this.getColor()} />
+        <ArticleFeature onEcho={this.handleEcho} article={article} image={articleImg} author={author} type={title} color={this.getColor()} />
       </div>
     );
   }

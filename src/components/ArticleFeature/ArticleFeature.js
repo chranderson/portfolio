@@ -9,6 +9,7 @@ import {
 export default class ArticleFeature extends Component {
 
   static propTypes = {
+    onEcho: PropTypes.func,
     article: PropTypes.object,
     author: PropTypes.object,
     color: PropTypes.array,
@@ -43,6 +44,11 @@ export default class ArticleFeature extends Component {
     color: ['#000000', '#ffffff'],
     type: ''
   }
+  //
+  constructor(props) {
+    super(props);
+    this.handleRead = this.handleRead.bind(this);
+  }
 
   componentDidMount() {
     this.animate('in');
@@ -63,6 +69,12 @@ export default class ArticleFeature extends Component {
     timeMax.to(feature, .25, {y:yNum});
   }
 
+
+  handleRead() {
+    // evt.preventDefault();
+    console.log('this.props.article.id: ', this.props.article.id);
+    this.props.onEcho();
+  }
 
   render() {
 
@@ -95,16 +107,17 @@ export default class ArticleFeature extends Component {
       padding: '5px 10px',
     };
     const publishDate = new Date(article.publishedAt).toLocaleDateString();
-    console.log(image);
     const mediaStyle = {
       background: `url(${image}) center`,
+      backgroundSize: 'cover',
     };
 
     return (
       <div onMouseOver={this.onMouseOver}
            onMouseOut={this.onMouseOut}
            className={`ArticleFeature`}
-           style={dynamicStyles}>
+           style={dynamicStyles}
+           onClick={this.handleRead}>
 
         <div className={`articleInner`}>
           <section className={`title`}>
@@ -118,7 +131,7 @@ export default class ArticleFeature extends Component {
 
             <div className={'linkRow'} style={linkStyle}>
               <a href={author.url} title={`more by ${author.name}`} target="_blank">{author.name}</a>
-              <a id="featureArticleLink" href={article.url} title={`read article`} target="_blank">Read more...</a>
+              <div id="featureArticleLink" onClick={this.handleRead} title={`read article`}>Read more...</div>
             </div>
           </section>
           <section className={`media`} style={mediaStyle}>
