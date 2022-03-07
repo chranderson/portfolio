@@ -12,7 +12,7 @@ export type Theme = {
 
 export const lightTheme: Theme = {
   color: colors.black,
-  bg: colors.white,
+  bg: 'linear-gradient(to top, #4ac29a, #bdfff3)',
   button: {
     bg: colors.black,
     color: colors.white
@@ -21,7 +21,7 @@ export const lightTheme: Theme = {
 
 export const darkTheme: Theme = {
   color: colors.white,
-  bg: colors.black,
+  bg: 'linear-gradient(to bottom, #2c3e50, #fd746c)',
   button: {
     bg: colors.white,
     color: colors.black

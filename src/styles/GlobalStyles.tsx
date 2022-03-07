@@ -4,7 +4,7 @@ import type { Theme } from 'styles/themes';
 const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
   html {
     overflow: hidden;
-    background-color: ${({ theme }) => theme.bg};
+    background: ${({ theme }) => theme.bg};
     position: fixed;
     top: 0;
     left: 0;
