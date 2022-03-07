@@ -15,8 +15,23 @@ const darkModeState = atom<boolean>({
 function useDarkMode() {
   const [darkModeEnabled, setDarkModeEnabled] = useRecoilState(darkModeState);
 
+  /** initialize value on mount */
+  React.useEffect(() => {
+    const currentLocalStorageValue = localStorage.getItem('darkModeEnabled');
+    if (typeof currentLocalStorageValue === 'string') {
+      setDarkModeEnabled(currentLocalStorageValue === 'true');
+    }
+
+    /** set localStorage value */
+    if (currentLocalStorageValue === null) {
+      localStorage.setItem('darkModeEnabled', 'true');
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const toggleDarkMode = React.useCallback(() => {
     setDarkModeEnabled(!darkModeEnabled);
+    localStorage.setItem('darkModeEnabled', String(!darkModeEnabled));
   }, [darkModeEnabled, setDarkModeEnabled]);
 
   const theme: Theme = darkModeEnabled ? darkTheme : lightTheme;

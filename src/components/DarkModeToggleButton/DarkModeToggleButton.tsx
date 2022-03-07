@@ -5,9 +5,14 @@ import useDarkMode from 'styles/useDarkMode';
 function DarkModeToggleButton() {
   const { darkModeEnabled, toggleDarkMode } = useDarkMode();
   const ariaText = `enable ${darkModeEnabled ? 'light' : 'dark'} mode`;
-
+  const currentMode = `${darkModeEnabled ? 'dark' : 'light'} mode`;
   return (
-    <Button aria-labelledby={ariaText} onClick={toggleDarkMode} variant="icon">
+    <Button
+      data-testid={currentMode}
+      aria-labelledby={ariaText}
+      onClick={toggleDarkMode}
+      variant="icon"
+    >
       {darkModeEnabled ? <FiSun /> : <FiMoon />}
     </Button>
   );
