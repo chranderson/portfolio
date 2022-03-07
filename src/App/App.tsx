@@ -1,5 +1,3 @@
-// import * as React from 'react';
-
 import { ThemeProvider } from 'styled-components/macro';
 import { Content, Wrap } from './Styles';
 import GlobalStyles from 'styles/GlobalStyles';
