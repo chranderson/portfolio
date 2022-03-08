@@ -11,6 +11,7 @@ const Button = styled.button<ButtonProps>`
   padding: 1rem 2rem;
   margin: 0;
   border-radius: 0.25rem;
+  text-transform: uppercase;
 
   cursor: pointer;
   user-select: none;
