@@ -15,9 +15,9 @@ function DarkModeToggleButton() {
       variant="icon"
     >
       {darkModeEnabled ? (
-        <FiSun data-testid="sun-icon" />
+        <FiSun data-testid="sun-icon" size="1.2rem" />
       ) : (
-        <FiMoon data-testid="moon-icon" />
+        <FiMoon data-testid="moon-icon" size="1.2rem" />
       )}
     </Button>
   );
