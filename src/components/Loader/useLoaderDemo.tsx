@@ -17,7 +17,9 @@ const useLoaderDemo = () => {
   return {
     showLoader,
     triggerLoader,
-    DemoLoader: showLoader && <Loader show message="doin' a 'lil something.." />
+    DemoLoader: showLoader && (
+      <Loader show message="doing a 'lil somethin'..." />
+    )
   };
 };
 
