@@ -3,6 +3,7 @@ import { Content, Wrap } from './Styles';
 import GlobalStyles from 'styles/GlobalStyles';
 import useDarkMode from 'styles/useDarkMode';
 import Nav from 'components/Nav';
+import Home from 'pages/Home';
 
 function App() {
   const { theme } = useDarkMode();
@@ -11,7 +12,9 @@ function App() {
       <GlobalStyles />
       <Wrap>
         <Nav />
-        <Content>content</Content>
+        <Content>
+          <Home />
+        </Content>
       </Wrap>
     </ThemeProvider>
   );

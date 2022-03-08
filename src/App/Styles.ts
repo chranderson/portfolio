@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro';
+import { SIZE } from 'styles/mediaQueries';
 
 export const Wrap = styled.div`
   color: ${({ theme }) => theme.color};
@@ -7,16 +8,12 @@ export const Wrap = styled.div`
   height: inherit;
 `;
 
-export const Nav = styled.nav`
-  padding: 2rem;
-  display: flex;
-  justify-content: space-around;
-`;
-
 export const Content = styled.div`
   flex: 1;
-  padding: 2rem;
-  display: grid;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  max-width: 75rem;
+
+  @media ${SIZE.SM} {
+    margin: 0 auto;
+  }
 `;

@@ -1,12 +1,11 @@
 import DarkModeToggleButton from 'components/DarkModeToggleButton/DarkModeToggleButton';
-import Logo from 'components/Logo';
-
+import LinkedInLink from 'components/Links/LinkedInLink';
 import { StyledNav } from './Styles';
 
 const Nav = () => {
   return (
     <StyledNav>
-      <Logo />
+      <LinkedInLink />
       <DarkModeToggleButton />
     </StyledNav>
   );

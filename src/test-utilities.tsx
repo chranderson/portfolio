@@ -2,6 +2,8 @@ import * as React from 'react';
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MutableSnapshot, RecoilRoot } from 'recoil';
+import { ThemeProvider } from 'styled-components/macro';
+import useDarkMode from 'styles/useDarkMode';
 
 const customRender = (
   ui: React.ReactElement,
@@ -11,8 +13,16 @@ const customRender = (
   } = {}
 ) => {
   const { initializeState } = renderOptions;
+
+  const ThemeWrapper: React.FunctionComponent = ({ children }) => {
+    const { theme } = useDarkMode();
+    return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+  };
+
   const Wrapper: React.FunctionComponent = ({ children }) => (
-    <RecoilRoot initializeState={initializeState}>{children}</RecoilRoot>
+    <RecoilRoot initializeState={initializeState}>
+      <ThemeWrapper>{children}</ThemeWrapper>
+    </RecoilRoot>
   );
   return render(ui, {
     wrapper: Wrapper,

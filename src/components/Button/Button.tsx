@@ -8,7 +8,7 @@ const Button = styled.button<ButtonProps>`
   background: ${({ theme }) => theme.button.bg};
   color: ${({ theme }) => theme.button.color};
   border: 2px solid transparent;
-  padding: 0;
+  padding: 1rem 2rem;
   margin: 0;
   border-radius: 0.25rem;
 

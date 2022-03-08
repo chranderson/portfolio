@@ -1,9 +1,12 @@
-import colors from 'styles/ColorPalette';
+import Colors from 'styles/ColorPalette';
+import Gradients from 'styles/Gradients';
+
+export type ThemeVariant = 'dark' | 'light';
 
 export type Theme = {
   color: string;
   /** background */
-  bg: string;
+  bg: string | Gradients;
   button: {
     bg: string;
     color: string;
@@ -11,19 +14,19 @@ export type Theme = {
 };
 
 export const lightTheme: Theme = {
-  color: colors.black,
-  bg: 'linear-gradient(to top, #4ac29a, #bdfff3)',
+  color: Colors.black,
+  bg: Gradients.light,
   button: {
-    bg: colors.black,
-    color: colors.white
+    bg: Colors.tranluscentBlack,
+    color: Colors.white
   }
 };
 
 export const darkTheme: Theme = {
-  color: colors.white,
-  bg: 'linear-gradient(to bottom, #2c3e50, #fd746c)',
+  color: Colors.white,
+  bg: Gradients.dark,
   button: {
-    bg: colors.white,
-    color: colors.black
+    bg: Colors.transluscentWhite,
+    color: Colors.black
   }
 };

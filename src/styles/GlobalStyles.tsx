@@ -10,6 +10,7 @@ const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
     left: 0;
     right: 0;
     bottom: 0;
+    
 
     * {
       box-sizing: border-box;
@@ -37,6 +38,11 @@ const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
 
   #root {
     height: inherit;
+  }
+
+
+  h1 {
+    font-size: 3rem;
   }
 `;
 
