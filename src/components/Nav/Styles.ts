@@ -4,7 +4,7 @@ import { SIZE } from 'styles/mediaQueries';
 export const StyledNav = styled.nav`
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
   padding: 1rem;
 
   width: 100%;
