@@ -11,6 +11,9 @@ export type Theme = {
     bg: string;
     color: string;
   };
+  link: {
+    color: string;
+  };
 };
 
 export const lightTheme: Theme = {
@@ -19,6 +22,9 @@ export const lightTheme: Theme = {
   button: {
     bg: Colors.tranluscentBlack,
     color: Colors.white
+  },
+  link: {
+    color: Colors.black
   }
 };
 
@@ -28,5 +34,8 @@ export const darkTheme: Theme = {
   button: {
     bg: Colors.transluscentWhite,
     color: Colors.black
+  },
+  link: {
+    color: Colors.white
   }
 };

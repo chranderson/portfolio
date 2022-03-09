@@ -2,7 +2,7 @@ import styled from 'styled-components/macro';
 import { FiExternalLink } from 'react-icons/fi';
 
 const StyledLink = styled.a`
-  color: black;
+  color: ${({ theme }) => theme.link.color};
   text-decoration: none;
   font-size: 0.65rem;
   margin: 0.25rem;
