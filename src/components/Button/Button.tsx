@@ -8,11 +8,12 @@ const Button = styled.button<ButtonProps>`
   background: ${({ theme }) => theme.button.bg};
   color: ${({ theme }) => theme.button.color};
   border: 2px solid transparent;
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  letter-spacing: 0.06rem;
   margin: 0;
   border-radius: 0.25rem;
   text-transform: uppercase;
-
   cursor: pointer;
   user-select: none;
 

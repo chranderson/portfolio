@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import type { Theme } from 'styles/themes';
+import { SIZE } from './mediaQueries';
 
 const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
   html {
@@ -42,8 +43,23 @@ const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
 
 
   h1 {
-    font-size: 3rem;
+    font-size: 2.3rem;
   }
+  h2 {
+    font-size: 1.1rem;
+  }
+
+
+  @media ${SIZE.MD} {
+    h1 {
+      font-size: 3rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+  }
+
 `;
 
 export default GlobalStyles;
